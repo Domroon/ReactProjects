@@ -13,13 +13,15 @@ function BookList() {
   return (
     <section className="booklist">
       <Book job="developer" number={22} />
-      <Book number={22} />
+      <Book number={22}>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates sed at iure aut officiis eligendi nobis ex ad nesciunt autem!</p>
+      </Book>
       <Book title={firstBook.title} author={firstBook.author} img={firstBook.img} />
     </section>
   )
 }
 
-const Book = ({ img, title, author, job }) => {
+const Book = ({ img, title, author, job, children }) => {
   const item = "book"
   // const { img, title, author} = props  That can also destruct props
 
@@ -31,6 +33,7 @@ const Book = ({ img, title, author, job }) => {
       <p>{item}</p>
       <p>{6 + 6}</p>
       <p>{job}</p>
+      <p>{children}</p>
     </article>
   )
 }
