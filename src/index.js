@@ -11,17 +11,19 @@ function BookList() {
 }
 
 const Book = () => {
+  const title = "Das Café am Rande der Welt"
+  const author = "John Strelecky"
+
   return (
     <article className="book">
       <Image />
-      <Title />
-      <Author />
+      <h1>{title.toUpperCase()}</h1>
+      <h4 style={{ color: "617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>{author}</h4>
+      {6 + 6}
     </article>
   )
 }
 
 const Image = () => <img src="https://images-eu.ssl-images-amazon.com/images/I/91r4uIYku9S._AC_UL200_SR200,200_.jpg" alt="" />
-const Title = () => <h1>Das Café am Rande der Welt</h1>
-const Author = () => <h4 style={{ color: "617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>John Strelecky</h4>
 
 ReactDom.render(<BookList />, document.getElementById("root"))
