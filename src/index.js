@@ -19,17 +19,17 @@ function BookList() {
   )
 }
 
-const Book = (props) => {
+const Book = ({ img, title, author, job }) => {
   const item = "book"
 
   return (
     <article className="book">
-      <Image img={props.img} />
-      <h1>{props.title}</h1>
-      <h4 style={{ color: "617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>{props.author}</h4>
+      <Image img={img} />
+      <h1>{title}</h1>
+      <h4 style={{ color: "617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>{author}</h4>
       <p>{item}</p>
       <p>{6 + 6}</p>
-      <p>{props.job}</p>
+      <p>{job}</p>
     </article>
   )
 }
