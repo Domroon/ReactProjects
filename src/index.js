@@ -21,6 +21,7 @@ function BookList() {
 
 const Book = ({ img, title, author, job }) => {
   const item = "book"
+  // const { img, title, author} = props  That can also destruct props
 
   return (
     <article className="book">
