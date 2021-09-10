@@ -1,6 +1,11 @@
 import React from "react"
 import ReactDom from "react-dom"
-import "./index.css"
+
+//CSS
+import "./Basics/index.css"
+
+import { books } from "./Basics/books"
+import Book from "./Basics/Book" //You can rename a default export however you want e.g. "Specific Book"
 
 //setup vars
 const firstBook = {
@@ -9,21 +14,6 @@ const firstBook = {
   author: "John Strelecky",
   img: "https://images-eu.ssl-images-amazon.com/images/I/91r4uIYku9S._AC_UL200_SR200,200_.jpg",
 }
-
-const books = [
-  {
-    id: 2,
-    title: "Zurück zu mir: Eine heilende Begegnung",
-    author: "Laura Malina Seiler",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/71-OYlG5WjL._AC_UL200_SR200,200_.jpg",
-  },
-  {
-    id: 3,
-    title: "Rehragout-Rendezvous: Der elfte Fall",
-    author: "Rita Falk",
-    img: "https://images-eu.ssl-images-amazon.com/images/I/91f03Hzi8wL._AC_UL200_SR200,200_.jpg",
-  },
-]
 
 const names = ["john", "peter", "susan"]
 const newNames = names.map((name) => {
@@ -52,46 +42,5 @@ function BookList() {
     </>
   )
 }
-
-const Book = ({ img, title, author, job, children }) => {
-  const item = "book"
-  // const { img, title, author} = props  That can also destruct props
-
-  //Events
-  // atrribute, eventHandler
-  // onClick, onMouseOver
-  const clickHandler = (e) => {
-    console.log(e)
-    console.log(e.target)
-    alert("Hello World")
-  }
-  const complexExample = (author) => {
-    console.log(author)
-  }
-  return (
-    <article
-      className="book"
-      onMouseOver={() => {
-        console.log(title)
-      }}
-    >
-      <Image img={img} />
-      <h1 onClick={() => console.log({ title })}>{title}</h1>
-      <h4 style={{ color: "617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>{author}</h4>
-      <p>{item}</p>
-      <p>{6 + 6}</p>
-      <p>{job}</p>
-      <p>{children}</p>
-      <button type="button" onClick={clickHandler}>
-        Test
-      </button>
-      <button type="button" onClick={() => complexExample(author)}>
-        More complex example
-      </button>
-    </article>
-  )
-}
-
-const Image = (props) => <img src={props.img} alt="" />
 
 ReactDom.render(<BookList />, document.getElementById("root"))
