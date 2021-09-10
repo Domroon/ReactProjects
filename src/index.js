@@ -4,6 +4,7 @@ import "./index.css"
 
 //setup vars
 const firstBook = {
+  id: 1,
   title: "Das Café am Rande der Welt",
   author: "John Strelecky",
   img: "https://images-eu.ssl-images-amazon.com/images/I/91r4uIYku9S._AC_UL200_SR200,200_.jpg",
@@ -11,11 +12,13 @@ const firstBook = {
 
 const books = [
   {
+    id: 2,
     title: "Zurück zu mir: Eine heilende Begegnung",
     author: "Laura Malina Seiler",
     img: "https://images-eu.ssl-images-amazon.com/images/I/71-OYlG5WjL._AC_UL200_SR200,200_.jpg",
   },
   {
+    id: 3,
     title: "Rehragout-Rendezvous: Der elfte Fall",
     author: "Rita Falk",
     img: "https://images-eu.ssl-images-amazon.com/images/I/91f03Hzi8wL._AC_UL200_SR200,200_.jpg",
@@ -32,18 +35,18 @@ function BookList() {
     <>
       <section className="booklist">
         <p>{names}</p>
-        <p>{newNames}</p>
+        <div>{newNames}</div>
 
         <Book job="developer" number={22} />
         <Book number={22}>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates sed at iure aut officiis eligendi nobis ex ad nesciunt autem!</p>
         </Book>
-        <Book title={firstBook.title} author={firstBook.author} img={firstBook.img} />
+        <Book key={firstBook.id} title={firstBook.title} author={firstBook.author} img={firstBook.img} />
       </section>
       <section className="booklist">
         {books.map((book) => {
-          const { title, author, img } = book
-          return <Book title={title} author={author} img={img} />
+          const { title, author, img, id } = book
+          return <Book key={id} title={title} author={author} img={img} />
         })}
       </section>
     </>
