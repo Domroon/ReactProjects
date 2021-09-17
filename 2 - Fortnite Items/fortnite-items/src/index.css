@@ -1,17 +1,1 @@
-@font-face {
-  font-family: BurbankBigRegular-Black;
-  src: url("./BurbankBigRegular-Black.otf") format("opentype");
-}
 
-h1 {
-  font-size: 3rem;
-  font-family: BurbankBigRegular-Black, sens-serif;
-}
-
-h2 {
-  font-family: BurbankBigRegular-Black, sens-serif;
-}
-
-p {
-  font-family: BurbankBigRegular-Black, sens-serif;
-}
