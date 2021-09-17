@@ -1,5 +1,19 @@
+/* GLOBAL */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  background: black;
+  color: white;
+  padding: 0;
+  margin: 0;
 }
 
 .App-logo {
@@ -35,4 +49,64 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: BurbankBigRegular-Black;
+  src: url("./BurbankBigRegular-Black.otf") format("opentype");
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: BurbankBigRegular-Black, sens-serif;
+}
+
+h2 {
+  font-family: BurbankBigRegular-Black, sens-serif;
+  margin: 10px;
+}
+
+h3 {
+  font-family: BurbankBigRegular-Black, sens-serif;
+}
+
+p {
+  font-family: BurbankBigRegular-Black, sens-serif;
+}
+
+/* Items */
+
+.item-container {
+  background: pink;
+  margin: 10px;
+  padding: 50px;
+  width: 100%;
+}
+
+.common {
+  background: #596269;
+}
+
+.uncommon {
+  background: #016604;
+}
+
+.rare {
+  background: #086bab;
+}
+
+.epic {
+  background: #5909c1;
+}
+
+.legendary {
+  background: #ab3d0b;
+}
+
+.mythic {
+  background: #565f5c;
+}
+
+.exotic {
+  background: #4c84b6;
 }
