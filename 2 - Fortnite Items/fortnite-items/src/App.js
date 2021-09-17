@@ -1,3 +1,4 @@
+import "./bootstrap.css"
 import "./App.css"
 import { useState, useEffect } from "react"
 
@@ -46,14 +47,31 @@ function App() {
       </div>
     )
   }
+
+  const searchOtherImage = () => {
+    //use this in on error arrow func!
+  }
+
   return (
     <div className="App">
       <h1>Upcoming Fortnite Items ({data.data.length})</h1>
       {data.data.map((item) => {
         return (
-          <div key={item.itemId}>
-            <h2>{item.item.name}</h2>
-            <img src={item.item.images.icon} alt={item.item.name} />
+          <div key={item.itemId} className={`item-container ${item.item.rarity}`}>
+            <div className="item">
+              <h4>{item.item.type}</h4>
+              <h1>{item.item.name}</h1>
+              <img
+                src={item.item.images.icon}
+                alt={item.item.name}
+                // onError={(e) => {
+                //   e.target.onerror = null
+                //   e.target.src = `${item.item.images.featured}`
+                // }}
+              />
+              <h2>{item.item.description}</h2>
+              <h3>({item.item.rarity})</h3>
+            </div>
           </div>
         )
       })}
