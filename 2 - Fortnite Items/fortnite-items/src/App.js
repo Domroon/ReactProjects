@@ -54,11 +54,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Upcoming Fortnite Items ({data.data.length})</h1>
-      {data.data.map((item) => {
-        return (
-          <div key={item.itemId} className={`item-container ${item.item.rarity}`}>
-            <div className="item">
+      <h1 className="title">Upcoming Fortnite Items ({data.data.length})</h1>
+      <section className="items">
+        {data.data.map((item) => {
+          return (
+            <div key={item.itemId} className={`item ${item.item.rarity}`}>
               <h4>{item.item.type}</h4>
               <h1>{item.item.name}</h1>
               <img
@@ -72,9 +72,9 @@ function App() {
               <h2>{item.item.description}</h2>
               <h3>({item.item.rarity})</h3>
             </div>
-          </div>
-        )
-      })}
+          )
+        })}
+      </section>
     </div>
   )
 }
