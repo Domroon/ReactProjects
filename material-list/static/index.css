@@ -16,10 +16,6 @@ h1 {
   padding: 10px;
 }
 
-.empty {
-  opacity: 0;
-}
-
 .list {
   margin: 20px;
   width: 850px;
@@ -38,6 +34,10 @@ h1 {
   font-weight: bold;
 }
 
+.empty {
+  opacity: 0;
+}
+
 .light-row {
   background: lightgray;
 }
@@ -50,4 +50,41 @@ h1 {
   display: inline-block;
   margin: 5px 25px;
   padding: 10px;
+}
+
+.btn-container {
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+.btn-container button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn-container button:hover {
+  background: rgb(189, 189, 189);
+  border-radius: 50%;
+}
+
+article {
+  margin: 20px 0px;
+}
+
+.new-mat label {
+  margin-right: 5px;
+}
+
+.number-in {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.name-in {
+  display: inline-block;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
