@@ -1,38 +1,196 @@
-.App {
+/* --------------------- GLOBAL -------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
   text-align: center;
+  margin: 20px;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+article {
+  margin: 20px 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  background: none;
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* -------------- GENERALY ------------------- */
+.uppercase {
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+.inline-block {
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin: 5px;
+}
+
+/* ------------ ALERT ----------------------- */
+
+.alert-container {
+  margin: 10px auto 10px auto;
+  width: 850px;
+  height: 40px;
+}
+
+.alert {
+  background: lightblue;
+  height: 40px;
+  text-align: center;
+  line-height: 37px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.alert p {
+  margin: auto 0px;
+}
+
+.success {
+  background: lightgreen;
+}
+
+.danger {
+  background: lightcoral;
+}
+
+.warning {
+  background: rgba(255, 255, 0, 0.582);
+}
+
+/* ----------- INPUT FIELDS ----------------- */
+
+.input {
+  padding: 2px;
+}
+
+.num-input {
+  width: 50px;
+}
+
+.add-btn {
+  background: lightgray;
+  padding: 5px;
+}
+
+.search-btn {
+  background: lightgray;
+  padding: 5px;
+}
+
+/* -------------  LIST ----------------------*/
+
+.list {
+  width: 850px;
+  margin: auto;
+}
+
+.column-names {
+  border: black 2px solid;
+}
+
+.column-names p {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.name-label {
+  margin-right: 90px;
+}
+
+.empty {
+  opacity: 0;
+}
+
+/* ----------------- ITEMS -------------------- */
+
+.light-row {
+  background: lightgray;
+}
+
+.dark-row {
+  background: rgb(182, 182, 182);
+}
+
+.row p {
+  display: inline-block;
+  margin: 5px 25px;
+  padding: 10px;
+}
+
+.btn-container {
+  display: inline-block;
+  margin: 0px;
+}
+
+.btn-container button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn-container button:hover {
+  background: rgb(189, 189, 189);
+  border-radius: 50%;
+}
+
+.new-mat label {
+  margin-right: 5px;
+}
+
+.number-in {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.name-in {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.number {
+  width: 120px;
+}
+
+.mat-number {
+  width: 150px;
+  margin-right: 60px;
+}
+
+.mat-name {
+  width: 200px;
+}
+
+.edit-delete-container {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.row p {
+  font-size: 1.2rem;
 }
