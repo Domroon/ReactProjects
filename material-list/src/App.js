@@ -22,7 +22,7 @@ function App() {
         )}
       </div>
       <section class="list">
-        <NewMaterial setAlert={setAlert} showAlert={showAlert} />
+        <NewMaterial showAlert={showAlert} items={items} setItems={setItems} />
         <FindItem />
         <List items={items} />
       </section>
