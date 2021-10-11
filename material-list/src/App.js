@@ -14,6 +14,12 @@ function App() {
     setAlert({ show, type, msg })
   }
 
+  const removeItem = (id) => {
+    // console.log(id)
+    const newItems = items.filter((item) => item.id !== id)
+    setItems(newItems)
+  }
+
   return (
     <div className="App">
       <div className="alert-container">
@@ -24,7 +30,7 @@ function App() {
       <section class="list">
         <NewMaterial showAlert={showAlert} items={items} setItems={setItems} />
         <FindItem />
-        <List items={items} />
+        <List items={items} removeItem={removeItem} />
       </section>
     </div>
   )

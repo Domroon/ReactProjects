@@ -1,7 +1,6 @@
-import { useState } from "react"
 import Item from "./Item"
 
-const List = ({ items }) => {
+const List = ({ items, removeItem }) => {
   return (
     <>
       <div class="column-names">
@@ -18,8 +17,9 @@ const List = ({ items }) => {
           number: item.number,
           mat_number: item.mat_number,
           mat_name: item.mat_name,
+          id: item.id,
         }
-        return <Item index={index} {...itemProps} />
+        return <Item index={index} {...itemProps} removeItem={removeItem} />
       })}
     </>
   )

@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { AiOutlinePlus } from "react-icons/ai"
 import { AiOutlineMinus } from "react-icons/ai"
+import { v4 as uuidv4 } from "uuid"
 
 const NewMaterial = ({ showAlert, items, setItems }) => {
   const [number, setNumber] = useState(0)
-  const [matName, setMatName] = useState()
-  const [matNumber, setMatNumber] = useState()
-  const [item, setItem] = useState({ number: 0, mat_number: 0, mat_name: "" })
+  const [matName, setMatName] = useState("")
+  const [matNumber, setMatNumber] = useState("")
 
   const handleAdd = (e) => {
     e.preventDefault()
@@ -15,9 +15,10 @@ const NewMaterial = ({ showAlert, items, setItems }) => {
     } else if (!number) {
       showAlert(true, "danger", "please enter how much you would like to add")
     } else {
+      const id = uuidv4()
       setItems([
         ...items,
-        { number: number, mat_number: matNumber, mat_name: matName },
+        { number: number, mat_number: matNumber, mat_name: matName, id: id },
       ])
       setNumber("")
       setMatNumber("")
@@ -30,7 +31,7 @@ const NewMaterial = ({ showAlert, items, setItems }) => {
     <article class="new-mat uppercase">
       <h2>add item</h2>
       <form action="">
-        <div class="number-in">
+        <div className="number-in">
           <label for="">number</label>
           <input
             type="text"
