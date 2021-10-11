@@ -3,12 +3,20 @@ import { AiOutlinePlus } from "react-icons/ai"
 import { AiOutlineMinus } from "react-icons/ai"
 
 const NewMaterial = ({ setAlert, showAlert }) => {
+  const [number, setNumber] = useState()
   const [matName, setMatName] = useState()
   const [matNumber, setMatNumber] = useState()
 
   const handleAdd = (e) => {
     e.preventDefault()
-    console.log("hello")
+    if (!matName || !matNumber) {
+      showAlert(true, "danger", "please enter name and/or material number")
+    } else if (!number) {
+      showAlert(true, "danger", "please enter how much you would like to add")
+    } else {
+      console.log("add the item to the items-list and clear the form fields!")
+      showAlert(true, "success", "sucessfully add the item")
+    }
   }
 
   return (
@@ -21,9 +29,9 @@ const NewMaterial = ({ setAlert, showAlert }) => {
             type="text"
             className="input num-input"
             placeholder="0"
-            value={matNumber}
+            value={number}
             onChange={(e) => {
-              setMatNumber(e.target.value)
+              setNumber(e.target.value)
             }}
           />
           <div class="btn-container">
