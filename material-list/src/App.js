@@ -53,6 +53,7 @@ function App() {
           items={items}
           setItems={setItems}
           isEditing={isEditing}
+          setIsEditing={setIsEditing}
           editID={editID}
         />
         <FindItem />

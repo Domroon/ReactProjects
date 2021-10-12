@@ -14,6 +14,7 @@ const NewMaterial = ({
   items,
   setItems,
   isEditing,
+  setIsEditing,
   editID,
 }) => {
   const handleAdd = (e) => {
@@ -31,17 +32,20 @@ const NewMaterial = ({
       setItems(
         items.map((item) => {
           if (item.id === editID) {
-            console.log(item)
             return {
               ...item,
               number: number,
               mat_number: matNumber,
               mat_name: matName,
-              id: item.id,
             }
           }
+          return item
         })
       )
+      setNumber("")
+      setMatNumber("")
+      setMatName("")
+      setIsEditing(false)
     } else {
       const id = uuidv4()
       setItems([
