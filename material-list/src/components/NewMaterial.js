@@ -3,17 +3,45 @@ import { AiOutlinePlus } from "react-icons/ai"
 import { AiOutlineMinus } from "react-icons/ai"
 import { v4 as uuidv4 } from "uuid"
 
-const NewMaterial = ({ showAlert, items, setItems }) => {
-  const [number, setNumber] = useState(0)
-  const [matName, setMatName] = useState("")
-  const [matNumber, setMatNumber] = useState("")
-
+const NewMaterial = ({
+  number,
+  setNumber,
+  matName,
+  setMatName,
+  matNumber,
+  setMatNumber,
+  showAlert,
+  items,
+  setItems,
+  isEditing,
+  editID,
+}) => {
   const handleAdd = (e) => {
     e.preventDefault()
     if (!matName || !matNumber) {
       showAlert(true, "danger", "please enter name and/or material number")
-    } else if (!number) {
-      showAlert(true, "danger", "please enter how much you would like to add")
+      // } else if (!number) {
+      //   showAlert(true, "danger", "please enter how much you would like to add")
+    } else if (isEditing) {
+      const editItem = items.find((item) => item.id === editID)
+      editItem.number = number
+      editItem.mat_number = matNumber
+      editItem.matName = matName
+      // console.log(editItem)
+      setItems(
+        items.map((item) => {
+          if (item.id === editID) {
+            console.log(item)
+            return {
+              ...item,
+              number: number,
+              mat_number: matNumber,
+              mat_name: matName,
+              id: item.id,
+            }
+          }
+        })
+      )
     } else {
       const id = uuidv4()
       setItems([
@@ -28,8 +56,8 @@ const NewMaterial = ({ showAlert, items, setItems }) => {
   }
 
   return (
-    <article class="new-mat uppercase">
-      <h2>add item</h2>
+    <article class={`new-mat uppercase ${isEditing && "editing"}`}>
+      <h2>{isEditing ? "edit" : "add"} item</h2>
       <form action="">
         <div className="number-in">
           <label for="">number</label>
@@ -89,7 +117,7 @@ const NewMaterial = ({ showAlert, items, setItems }) => {
             onChange={(e) => setMatName(e.target.value)}
           />
           <button type="submit" className="btn add-btn" onClick={handleAdd}>
-            add
+            {isEditing ? "edit" : "add"}
           </button>
         </div>
       </form>

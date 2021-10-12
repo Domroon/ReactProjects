@@ -81,6 +81,10 @@ button {
 }
 
 /* ----------- INPUT FIELDS ----------------- */
+.editing {
+  background: lightskyblue;
+  padding: 0px 10px;
+}
 
 .input {
   padding: 2px;

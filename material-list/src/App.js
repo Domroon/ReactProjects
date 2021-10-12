@@ -7,8 +7,14 @@ import Alert from "./components/Alert"
 import { materials } from "./data/materials"
 
 function App() {
+  const [number, setNumber] = useState(0)
+  const [matName, setMatName] = useState("")
+  const [matNumber, setMatNumber] = useState("")
+
   const [items, setItems] = useState(materials)
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" })
+  const [isEditing, setIsEditing] = useState(false)
+  const [editID, setEditID] = useState()
 
   const showAlert = (show = false, type = "", msg = "") => {
     setAlert({ show, type, msg })
@@ -20,6 +26,14 @@ function App() {
     setItems(newItems)
   }
 
+  const editItem = (id) => {
+    const item = items.find((item) => item.id === id)
+    setIsEditing(true)
+    setNumber(item.number)
+    setMatNumber(item.mat_number)
+    setMatName(item.mat_name)
+  }
+
   return (
     <div className="App">
       <div className="alert-container">
@@ -28,9 +42,27 @@ function App() {
         )}
       </div>
       <section class="list">
-        <NewMaterial showAlert={showAlert} items={items} setItems={setItems} />
+        <NewMaterial
+          number={number}
+          setNumber={setNumber}
+          matName={matName}
+          setMatName={setMatName}
+          matNumber={matNumber}
+          setMatNumber={setMatNumber}
+          showAlert={showAlert}
+          items={items}
+          setItems={setItems}
+          isEditing={isEditing}
+          editID={editID}
+        />
         <FindItem />
-        <List items={items} removeItem={removeItem} />
+        <List
+          items={items}
+          removeItem={removeItem}
+          setIsEditing={setIsEditing}
+          setEditID={setEditID}
+          editItem={editItem}
+        />
       </section>
     </div>
   )

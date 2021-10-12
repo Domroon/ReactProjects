@@ -1,7 +1,17 @@
 import { FiEdit2 } from "react-icons/fi"
 import { BiTrashAlt } from "react-icons/bi"
 
-const Item = ({ index, number, mat_number, mat_name, id, removeItem }) => {
+const Item = ({
+  index,
+  number,
+  mat_number,
+  mat_name,
+  id,
+  removeItem,
+  setIsEditing,
+  setEditID,
+  editItem,
+}) => {
   return (
     <div key={id} class={`row ${index % 2 === 0 ? "light-row" : "dark-row"}`}>
       <div className="number inline-block">
@@ -16,7 +26,14 @@ const Item = ({ index, number, mat_number, mat_name, id, removeItem }) => {
       <div className="edit-delete-container inline-block">
         <div className="btn-container">
           <div className="btn edit-btn inline-block">
-            <button className="icon">
+            <button
+              className="icon"
+              type="submit"
+              onClick={() => {
+                setEditID(id)
+                editItem(id)
+              }}
+            >
               <FiEdit2 />
             </button>
           </div>
