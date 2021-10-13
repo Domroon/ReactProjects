@@ -11,6 +11,10 @@ function App() {
   const [matName, setMatName] = useState("")
   const [matNumber, setMatNumber] = useState("")
 
+  const [findMatNum, setFindMatNum] = useState("")
+  const [findMatName, setFindMatName] = useState("")
+  const [foundItem, setFoundItem] = useState("")
+
   const [items, setItems] = useState(materials)
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" })
   const [isEditing, setIsEditing] = useState(false)
@@ -49,6 +53,10 @@ function App() {
           setMatName={setMatName}
           matNumber={matNumber}
           setMatNumber={setMatNumber}
+          findMatNum={findMatNum}
+          setFindMatNum={setFindMatNum}
+          findMatName={findMatName}
+          setFindMatName={setFindMatName}
           showAlert={showAlert}
           items={items}
           setItems={setItems}
@@ -56,13 +64,21 @@ function App() {
           setIsEditing={setIsEditing}
           editID={editID}
         />
-        <FindItem />
+        <FindItem
+          findMatNum={findMatNum}
+          setFindMatNum={setFindMatNum}
+          findMatName={findMatName}
+          setFindMatName={setFindMatName}
+        />
         <List
           items={items}
           removeItem={removeItem}
           setIsEditing={setIsEditing}
           setEditID={setEditID}
           editItem={editItem}
+          foundItem={foundItem}
+          findMatNum={findMatNum}
+          findMatName={findMatName}
         />
       </section>
     </div>

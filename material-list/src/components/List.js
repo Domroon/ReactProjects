@@ -1,6 +1,15 @@
 import Item from "./Item"
 
-const List = ({ items, removeItem, setIsEditing, setEditID, editItem }) => {
+const List = ({
+  items,
+  removeItem,
+  setIsEditing,
+  setEditID,
+  editItem,
+  foundItem,
+  findMatNum,
+  findMatName,
+}) => {
   return (
     <>
       <div class="column-names">
@@ -12,7 +21,6 @@ const List = ({ items, removeItem, setIsEditing, setEditID, editItem }) => {
         <p>edit/delete</p>
       </div>
       {items.map((item, index) => {
-        console.log(item)
         const itemProps = {
           number: item.number,
           mat_number: item.mat_number,
@@ -27,6 +35,10 @@ const List = ({ items, removeItem, setIsEditing, setEditID, editItem }) => {
             setIsEditing={setIsEditing}
             setEditID={setEditID}
             editItem={editItem}
+            foundItem={foundItem}
+            findMatNum={findMatNum}
+            findMatName={findMatName}
+            items={items}
           />
         )
       })}
