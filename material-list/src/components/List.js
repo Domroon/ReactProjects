@@ -5,7 +5,6 @@ const List = ({ items, removeItem, setIsEditing, setEditID, editItem }) => {
     <>
       <div class="column-names">
         <p>number</p>
-        <p class="empty">MI</p>
         <p>material number</p>
         <div className="name-label inline-block">
           <p>name</p>
