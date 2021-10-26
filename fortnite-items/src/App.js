@@ -55,6 +55,64 @@ function App() {
   return (
     <div className="App">
       <h1 className="title">Upcoming Fortnite Items ({data.data.length})</h1>
+      <section class="filter">
+        <h2>Filter</h2>
+        <form>
+          <div className="backpack">
+            <input type="checkbox" id="backpack" />
+            <label>backpack</label>
+          </div>
+          <div className="loadingscreen">
+            <input type="checkbox" id="loadingscreen" />
+            <label>loadingscreen</label>
+          </div>
+          <div className="bundle">
+            <input type="checkbox" id="bundle" />
+            <label>bundle</label>
+          </div>
+          <div className="outfit">
+            <input type="checkbox" id="outfit" />
+            <label>outfit</label>
+          </div>
+          <div className="glider">
+            <input type="checkbox" id="glider" />
+            <label>glider</label>
+          </div>
+          <div className="pickaxe">
+            <input type="checkbox" id="pickaxe" />
+            <label>pickaxe</label>
+          </div>
+          <div className="emote">
+            <input type="checkbox" id="emote" />
+            <label>emote</label>
+          </div>
+          <div className="wrap">
+            <input type="checkbox" id="wrap" />
+            <label>wrap</label>
+          </div>
+          <div className="contrail">
+            <input type="checkbox" id="contrail" />
+            <label>contrail</label>
+          </div>
+          <div className="toy">
+            <input type="checkbox" id="toy" />
+            <label>toy</label>
+          </div>
+          <div className="spray">
+            <input type="checkbox" id="spray" />
+            <label>spray</label>
+          </div>
+          <div className="emoji">
+            <input type="checkbox" id="emoji" />
+            <label>emoji</label>
+          </div>
+          <div className="banner">
+            <input type="checkbox" id="banner" />
+            <label>banner</label>
+          </div>
+          <button>reset</button>
+        </form>
+      </section>
       <section className="items">
         {data.data.map((item) => {
           return (

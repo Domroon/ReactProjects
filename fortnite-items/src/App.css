@@ -87,6 +87,21 @@ p {
   font-family: BurbankBigRegular-Black, sens-serif;
 }
 
+/* Filter */
+.filter {
+  max-width: 750px;
+  margin: auto;
+}
+
+.filter div {
+  display: inline-block;
+  margin: 10px;
+}
+
+.filter input {
+  margin: 2px;
+}
+
 /* Items */
 
 .item {
